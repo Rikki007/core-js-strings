@@ -355,8 +355,15 @@ function isPalindrome(str) {
  *   findLongestWord('A long and winding road') => 'winding'
  *   findLongestWord('No words here') => 'words'
  */
-function findLongestWord(/* sentence */) {
-  throw new Error('Not implemented');
+function findLongestWord(sentence) {
+  const arr = sentence.split(' ');
+  let longest = '';
+  for (let i = 0; i < arr.length; i += 1) {
+    if (arr[i].length > longest.length) {
+      longest = arr[i];
+    }
+  }
+  return longest;
 }
 
 /**
@@ -369,8 +376,11 @@ function findLongestWord(/* sentence */) {
  *   reverseWords('Hello World') => 'olleH dlroW'
  *   reverseWords('The Quick Brown Fox') => 'ehT kciuQ nworB xoF'
  */
-function reverseWords(/* str */) {
-  throw new Error('Not implemented');
+function reverseWords(str) {
+  return str
+    .split(' ')
+    .map((item) => item.split('').reverse().join(''))
+    .join(' ');
 }
 
 /**
@@ -384,8 +394,16 @@ function reverseWords(/* str */) {
  *   invertCase('JavaScript is Fun') => 'jAVAsCRIPT IS fUN'
  *   invertCase('12345') => '12345'
  */
-function invertCase(/* str */) {
-  throw new Error('Not implemented');
+function invertCase(str) {
+  let finStr = '';
+  for (let i = 0; i < str.length; i += 1) {
+    if (str[i] === str[i].toLowerCase()) {
+      finStr += str[i].toUpperCase();
+    } else {
+      finStr += str[i].toLowerCase();
+    }
+  }
+  return finStr;
 }
 
 /**
@@ -401,8 +419,8 @@ function invertCase(/* str */) {
  *   getStringFromTemplate('John','Doe') => 'Hello, John Doe!'
  *   getStringFromTemplate('Chuck','Norris') => 'Hello, Chuck Norris!'
  */
-function getStringFromTemplate(/* firstName, lastName */) {
-  throw new Error('Not implemented');
+function getStringFromTemplate(firstName, lastName) {
+  return `Hello, ${firstName} ${lastName}!`;
 }
 
 /**
